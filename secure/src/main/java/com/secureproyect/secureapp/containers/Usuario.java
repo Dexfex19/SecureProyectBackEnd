@@ -11,7 +11,7 @@ import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 public class Usuario {
 
     @Id
-    private int id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private String nombreUsuario;
@@ -20,6 +20,9 @@ public class Usuario {
 
     @PartitionKey
     private String correo;
+
+    public Usuario() {
+    }
 
     public Usuario(int id, String nombre, String apellido, String nombreUsuario, String contrasena, ArrayList<String> contrasenasGuardadas, String correo) {
         this.id = id;

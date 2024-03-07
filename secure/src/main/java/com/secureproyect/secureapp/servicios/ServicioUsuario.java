@@ -9,6 +9,9 @@ import com.secureproyect.secureapp.containers.Usuario;
 @Service
 public class ServicioUsuario {
 
+    public ServicioUsuario() {
+    }
+
     @Autowired
     RepositorioUsuario repositorioUsuario;
 
@@ -17,6 +20,6 @@ public class ServicioUsuario {
     }
 
     public void crearUsuario(Usuario usuario){
-        repositorioUsuario.save(usuario);
+        repositorioUsuario.save(usuario).block();
     }
 }
