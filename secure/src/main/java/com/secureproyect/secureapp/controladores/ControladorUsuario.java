@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.secureproyect.secureapp.containers.Usuario;
+import com.secureproyect.secureapp.contenedores.Usuario;
 import com.secureproyect.secureapp.servicios.ServicioUsuario;
 
 @RestController
