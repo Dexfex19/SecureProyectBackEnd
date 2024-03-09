@@ -3,8 +3,8 @@ package com.secureproyect.secureapp.servicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.secureproyect.secureapp.Repos.RepositorioUsuario;
-import com.secureproyect.secureapp.containers.Usuario;
+import com.secureproyect.secureapp.contenedores.Usuario;
+import com.secureproyect.secureapp.repositorios.RepositorioUsuario;
 
 @Service
 public class ServicioUsuario {
