@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.secureproyect.secureapp.contenedores.Usuario;
 import com.secureproyect.secureapp.servicios.ServicioUsuario;
 
+import reactor.core.publisher.Flux;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 @RestController
 @RequestMapping("/usuario")
 public class ControladorUsuario {
@@ -27,4 +33,15 @@ public class ControladorUsuario {
     public void crearPersona(@RequestBody Usuario usuario){
         servicioUsuario.crearUsuario(usuario);
     }
+
+    @GetMapping
+    public Flux<Usuario> obtenerUsuarios() {
+        return servicioUsuario.obtenerUsuarios(); 
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarUsuario(@PathVariable Integer id){
+        servicioUsuario.eliminarUsuario(id);
+    }
+    
 }
