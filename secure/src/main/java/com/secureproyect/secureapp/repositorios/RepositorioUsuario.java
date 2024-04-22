@@ -8,6 +8,6 @@ import com.secureproyect.secureapp.contenedores.Usuario;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface RepositorioUsuario extends ReactiveCosmosRepository<Usuario, Integer> {
+public interface RepositorioUsuario extends ReactiveCosmosRepository<Usuario, String> {
     Mono<Usuario> findByCorreo(String correo);
 }

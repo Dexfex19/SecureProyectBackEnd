@@ -30,10 +30,13 @@ public class ServicioUsuario {
         return repositorioUsuario.findAll();
     }
 
-    public void eliminarUsuario(Integer id) {
-        Mono<Usuario> UsuarioMono = repositorioUsuario.findById(id);
+    public Mono<Usuario> buscarUsuarioPorId(String id) {
+        return repositorioUsuario.findById(id);
+    }
 
-        UsuarioMono.subscribe(
+    public void eliminarUsuarioPorId(String id) {
+        Mono<Usuario> usuarioMono = repositorioUsuario.findById(id);
+        usuarioMono.subscribe(
                 usuario -> {
                     repositorioUsuario.delete(usuario).subscribe();
                     System.out.println("Usuario eliminado con éxito");
@@ -48,4 +51,5 @@ public class ServicioUsuario {
                 .filter(usuario -> usuario.getContrasena().equals(contrasena))
                 .switchIfEmpty(Mono.error(new RuntimeException("El correo o la contraseña están incorrectos")));
     }
+
 }

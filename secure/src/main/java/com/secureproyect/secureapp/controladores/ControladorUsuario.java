@@ -43,9 +43,14 @@ public class ControladorUsuario {
         return servicioUsuario.obtenerUsuarios();
     }
 
+    @GetMapping("/{id}")
+    public Mono<Usuario> obtenerUsuarioPorId(@PathVariable String id) {
+        return servicioUsuario.buscarUsuarioPorId(id);
+    }
+
     @DeleteMapping("/{id}")
-    public void eliminarUsuario(@PathVariable Integer id) {
-        servicioUsuario.eliminarUsuario(id);
+    public void eliminarUsuarioPorId(@PathVariable String id) {
+        servicioUsuario.eliminarUsuarioPorId(id);
     }
 
     @PostMapping("/iniciarSesion")
