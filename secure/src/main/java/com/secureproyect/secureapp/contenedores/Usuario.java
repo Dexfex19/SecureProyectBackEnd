@@ -1,6 +1,7 @@
 package com.secureproyect.secureapp.contenedores;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,7 +12,7 @@ import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 public class Usuario {
 
     @Id
-    private Integer id;
+    private String id;
     private String nombre;
     private String apellido;
     private String nombreUsuario;
@@ -21,10 +22,8 @@ public class Usuario {
     @PartitionKey
     private String correo;
 
-    public Usuario() {
-    }
-
-    public Usuario(int id, String nombre, String apellido, String nombreUsuario, String contrasena, ArrayList<String> contrasenasGuardadas, String correo) {
+    public Usuario(String id, String nombre, String apellido, String nombreUsuario, String contrasena,
+            ArrayList<String> contrasenasGuardadas, String correo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -34,19 +33,21 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public Usuario(String nombre, String apellido, String nombreUsuario, String contrasena, String correo) {
+    public Usuario(String nombre, String apellido, String nombreUsuario, String contrasena,
+            ArrayList<String> contrasenasGuardadas, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
+        this.contrasenasGuardadas = contrasenasGuardadas;
         this.correo = correo;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -96,6 +97,10 @@ public class Usuario {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public Usuario() {
+        this.id = UUID.randomUUID().toString(); // Generar un UUID único
     }
 
     @Override
