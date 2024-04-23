@@ -33,16 +33,6 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public Usuario(String nombre, String apellido, String nombreUsuario, String contrasena,
-            ArrayList<String> contrasenasGuardadas, String correo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.nombreUsuario = nombreUsuario;
-        this.contrasena = contrasena;
-        this.contrasenasGuardadas = contrasenasGuardadas;
-        this.correo = correo;
-    }
-
     public String getId() {
         return id;
     }
