@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/contrasena")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://victorious-coast-075ddca0f.5.azurestaticapps.net")
 public class ControladorContrasena {
 
     @Autowired

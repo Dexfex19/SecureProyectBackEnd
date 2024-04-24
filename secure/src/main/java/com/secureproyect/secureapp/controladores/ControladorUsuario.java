@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://victorious-coast-075ddca0f.5.azurestaticapps.net")
 public class ControladorUsuario {
 
     @Autowired
